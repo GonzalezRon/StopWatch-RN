@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet,Pressable} from 'react-native'
-import { useCallback,useMemo } from 'react';
+import {useMemo } from 'react';
 
 
 
