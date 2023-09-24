@@ -1,46 +1,38 @@
-
-import {View, Text, StyleSheet,} from 'react-native'; 
+import {View, StyleSheet,} from 'react-native'; 
+import TimerComponent from './TimerComponent';
 
 /*
 *Time function takes time as props from its parent Component 
 *-props can carry all these funcs if params gets too long  
 *--{toMinutes, toMilliSeconds, toSeconds, toTimeStamp, time}
 */
-function Time ({time,toTimeStamp,width, height,}) {
+function Time ({time,width, height, toTimeStamp}) {
 
     const screenWidth = width;
     const screenHeight = height * 0.5;
-
     
     return (
-        <View style={[styles.clockface, {width: screenWidth, height: screenHeight}]}>
-            <View style={styles.clockFrame}>
-                <Text style={styles.clockDigits}>
-                    {toTimeStamp(time)}
-                </Text> 
-            </View>
+      
+        <View style = {[styles.clockface, {width: screenWidth, height: screenHeight}]}>
+        <TimerComponent 
+        toTimeStamp={toTimeStamp}
+        time={time}
+        width={width}/> 
         </View> 
     )
 }
 
+
 const styles = StyleSheet.create({
 
-    clockDigits:{
-        fontSize:110,//112
-        fontWeight:'200',
-        color:'#F9F6EE',
-       
-        //create a feature that changes the timers color 
-    },
-    clockface : {
+    clockface : { 
         justifyContent: 'center',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         backgroundColor: 'black'
         },
-    clockFrame:{
-        width:"95%",
-        //hold clock timer 
-    },
+   
+
 })
 export default Time; 
+
 
