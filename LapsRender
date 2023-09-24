@@ -1,0 +1,31 @@
+import {View,Text,StyleSheet} from 'react-native'
+
+
+function lapsRender ({item, size, index}){
+
+
+    return (
+        <View style = {styles.LapFrame}>
+                <Text style={styles.lapText}>Lap{index}</Text>
+                <Text style={styles.lapText}>{item}</Text>
+            </View> 
+    )
+}
+
+const styles = StyleSheet.create({
+
+    LapFrame : {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderWidth:16,
+        borderBottomWidth: .17,
+        borderBottomColor: '#F9F6EE'
+    }, 
+    lapText: {
+        color:'#F9F6EE',
+        fontSize: 18, 
+        borderBottomWidth: 8,
+    }
+})
+
+export default lapsRender
