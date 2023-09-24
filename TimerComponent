@@ -1,0 +1,50 @@
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const TimerComponent = ({toTimeStamp, time, width }) => {
+
+    const [min, sec, mil ] = toTimeStamp(time)
+
+  return (
+    <View style={[styles.container, {width: width}]}>
+      <View style={styles.timeContainer}>
+        <Text style={styles.timeText}>{min}</Text>
+      </View>
+      <Text style={styles.separator}>:</Text>
+      <View style={styles.timeContainer}>
+        <Text style={styles.timeText}>{sec}</Text>
+      </View>
+      <Text style={styles.separator}>.</Text>
+      <View style={styles.timeContainer}>
+        <Text style={styles.timeText}>{mil}</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'black',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    height: 100,
+  },
+
+  timeContainer: {
+    alignItems: 'center',
+    width: 100,
+  },
+  timeText: {
+    fontSize: 100,
+    fontWeight: '100',
+    color: 'white',
+
+  },
+  separator: {
+    color: 'white',
+    fontSize: 60,
+  },
+});
+
+export default TimerComponent;
